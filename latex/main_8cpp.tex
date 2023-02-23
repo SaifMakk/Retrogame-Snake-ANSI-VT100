@@ -1,0 +1,365 @@
+\hypertarget{main_8cpp}{}\doxysection{C\+:/\+Users/49176/\+One\+Drive/\+Documents/\+Platform\+IO/\+Projects/\+Snake\+Retrogame/src/main.cpp File Reference}
+\label{main_8cpp}\index{C:/Users/49176/OneDrive/Documents/PlatformIO/Projects/SnakeRetrogame/src/main.cpp@{C:/Users/49176/OneDrive/Documents/PlatformIO/Projects/SnakeRetrogame/src/main.cpp}}
+
+
+application-\/logic-\/header  
+
+
+{\ttfamily \#include \char`\"{}Header\+Datei.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_aea40db15f2dbfe8f050efc99952eb3ab}{movecursor}}(\mbox{\hyperlink{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}{buffer}},  format, ...)~    snprintf(\mbox{\hyperlink{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}{buffer}}, sizeof(\mbox{\hyperlink{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}{buffer}}), format, \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+);
+\begin{DoxyCompactList}\small\item\em ~\newline
+ move the cursor on the screen using Ansi Escape Sequence . \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8cpp_a8cefc2f98053b5379f8e23a229d5b0fe}{joyX}}~PC0
+\begin{DoxyCompactList}\small\item\em ~\newline
+ input pins of the joystick. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8cpp_af736f99d6eba0d89d20f810126732e35}{joyY}}~PC1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a7756aed8c7c10fce515787523ffcada6}{game\+Over}} (void)
+\item 
+void \mbox{\hyperlink{main_8cpp_a95178a7e51ec2ee2bf29451c861d09bf}{place\+Food}} (void)
+\item 
+void \mbox{\hyperlink{main_8cpp_adbc0df4dd26f50ae0d43ddf2c19a1438}{drawsnake}} (void)
+\begin{DoxyCompactList}\small\item\em ~\newline
+ draw the snake, \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a7ebd9759b4e3197bf52bab531982c0ff}{update}} (void)
+\begin{DoxyCompactList}\small\item\em ~\newline
+ This function updates the game state by moving the snake, checking for collision with the food or the walls, and updating the score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a2664904598abae2433dda5423060754f}{read\+Input}} ()
+\begin{DoxyCompactList}\small\item\em ~\newline
+ reads the input from the joystick and sets the direction of movement based on the input. Read the X value Determine the direction based on the joystick inputs \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a2858154e2009b0e6e616f313177762bc}{init}} (void)
+\begin{DoxyCompactList}\small\item\em ~\newline
+ allocate memory for the snake initialize the snake at the center of the screen place the food randomly on the screen \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{main_8cpp_a06f729d799dd12739c1999a302641f2f}{analog\+Read}} (int)
+\begin{DoxyCompactList}\small\item\em ~\newline
+ Read the analog value from the specified pin using the ADC \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a2c36dfe047ac89af7b95ccb8a2c10ab4}{drawfoodandscore}} ()
+\begin{DoxyCompactList}\small\item\em ~\newline
+ draw the food and the score , \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a53445e9faa28521aa22dccee92b3e344}{updatescreen}} ()
+\begin{DoxyCompactList}\small\item\em ~\newline
+ This function is responsible for updating the screen after every game loop iteration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_af87f0918572c5e2cb592dccc92d5c98d}{init\+Usart}} (uint32\+\_\+t baudrate, uint8\+\_\+t databits, \mbox{\hyperlink{_header_datei_8h_ac47b2bd906d2c843b97ecae6c1eea710}{Parity}} parity, uint8\+\_\+t stopbits)
+\begin{DoxyCompactList}\small\item\em ~\newline
+ Initialize the USART interface with the specified parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a13b5ba483139c647ca7a177c7027deb4}{usart\+\_\+putstring}} (char $\ast$s)
+\begin{DoxyCompactList}\small\item\em ~\newline
+ function to send escape sequences to draw the grid, the score, and save the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int16\+\_\+t \mbox{\hyperlink{main_8cpp_a0a4f0bf7241669e35afad629427b8601}{ROWS}} = 20
+\begin{DoxyCompactList}\small\item\em ~\newline
+ //the dimensions of the grid \end{DoxyCompactList}\item 
+const int16\+\_\+t \mbox{\hyperlink{main_8cpp_a3d8db2824cad1464d7afac797ee469d5}{COLS}} = 20
+\item 
+int16\+\_\+t $\ast$$\ast$ \mbox{\hyperlink{main_8cpp_a5d0ae2df43e0dfad7165621eda12e6a6}{snake}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{main_8cpp_af427c65f47aefdca1425afc39025f099}{snake\+\_\+length}} = 1
+\item 
+int16\+\_\+t \mbox{\hyperlink{main_8cpp_ac75d07e616de721bba7f5e31fe0de5a0}{food\+\_\+x}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{main_8cpp_a810a4966e976f72cb189cbac97855d9b}{food\+\_\+y}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{main_8cpp_a749531d3d244d27ab1930f8d898ecd83}{lastfoodposx}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{main_8cpp_a75757a872745203c753d2b7049e85543}{lastfoodposy}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{main_8cpp_ab4dcd7ccfeb9a519c1b9d91bb575928c}{direction}} = 1
+\item 
+char \mbox{\hyperlink{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}{buffer}} \mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em ~\newline
+ buffer to store formatted strings \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+application-\/logic-\/header 
+
+This file provides the application-\/logic for the program.
+
+\begin{DoxyAuthor}{Author}
+Seifeddine Makhlouf 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_a8cefc2f98053b5379f8e23a229d5b0fe}\label{main_8cpp_a8cefc2f98053b5379f8e23a229d5b0fe}} 
+\index{main.cpp@{main.cpp}!joyX@{joyX}}
+\index{joyX@{joyX}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{joyX}{joyX}}
+{\footnotesize\ttfamily \#define joyX~PC0}
+
+
+
+~\newline
+ input pins of the joystick. 
+
+\mbox{\Hypertarget{main_8cpp_af736f99d6eba0d89d20f810126732e35}\label{main_8cpp_af736f99d6eba0d89d20f810126732e35}} 
+\index{main.cpp@{main.cpp}!joyY@{joyY}}
+\index{joyY@{joyY}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{joyY}{joyY}}
+{\footnotesize\ttfamily \#define joyY~PC1}
+
+\mbox{\Hypertarget{main_8cpp_aea40db15f2dbfe8f050efc99952eb3ab}\label{main_8cpp_aea40db15f2dbfe8f050efc99952eb3ab}} 
+\index{main.cpp@{main.cpp}!movecursor@{movecursor}}
+\index{movecursor@{movecursor}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{movecursor}{movecursor}}
+{\footnotesize\ttfamily \#define movecursor(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}{buffer}},  }\item[{}]{format,  }\item[{}]{... }\end{DoxyParamCaption})~    snprintf(\mbox{\hyperlink{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}{buffer}}, sizeof(\mbox{\hyperlink{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}{buffer}}), format, \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+);}
+
+
+
+~\newline
+ move the cursor on the screen using Ansi Escape Sequence . 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a06f729d799dd12739c1999a302641f2f}\label{main_8cpp_a06f729d799dd12739c1999a302641f2f}} 
+\index{main.cpp@{main.cpp}!analogRead@{analogRead}}
+\index{analogRead@{analogRead}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{analogRead()}{analogRead()}}
+{\footnotesize\ttfamily uint16\+\_\+t analog\+Read (\begin{DoxyParamCaption}\item[{int}]{pin }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ Read the analog value from the specified pin using the ADC 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & pin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tge anlog Value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a2c36dfe047ac89af7b95ccb8a2c10ab4}\label{main_8cpp_a2c36dfe047ac89af7b95ccb8a2c10ab4}} 
+\index{main.cpp@{main.cpp}!drawfoodandscore@{drawfoodandscore}}
+\index{drawfoodandscore@{drawfoodandscore}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{drawfoodandscore()}{drawfoodandscore()}}
+{\footnotesize\ttfamily void drawfoodandscore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ draw the food and the score , 
+
+\mbox{\Hypertarget{main_8cpp_adbc0df4dd26f50ae0d43ddf2c19a1438}\label{main_8cpp_adbc0df4dd26f50ae0d43ddf2c19a1438}} 
+\index{main.cpp@{main.cpp}!drawsnake@{drawsnake}}
+\index{drawsnake@{drawsnake}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{drawsnake()}{drawsnake()}}
+{\footnotesize\ttfamily void drawsnake (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ draw the snake, 
+
+\mbox{\Hypertarget{main_8cpp_a7756aed8c7c10fce515787523ffcada6}\label{main_8cpp_a7756aed8c7c10fce515787523ffcada6}} 
+\index{main.cpp@{main.cpp}!gameOver@{gameOver}}
+\index{gameOver@{gameOver}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gameOver()}{gameOver()}}
+{\footnotesize\ttfamily void game\+Over (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a2858154e2009b0e6e616f313177762bc}\label{main_8cpp_a2858154e2009b0e6e616f313177762bc}} 
+\index{main.cpp@{main.cpp}!init@{init}}
+\index{init@{init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ allocate memory for the snake initialize the snake at the center of the screen place the food randomly on the screen 
+
+\mbox{\Hypertarget{main_8cpp_af87f0918572c5e2cb592dccc92d5c98d}\label{main_8cpp_af87f0918572c5e2cb592dccc92d5c98d}} 
+\index{main.cpp@{main.cpp}!initUsart@{initUsart}}
+\index{initUsart@{initUsart}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{initUsart()}{initUsart()}}
+{\footnotesize\ttfamily void init\+Usart (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{baudrate,  }\item[{uint8\+\_\+t}]{databits,  }\item[{\mbox{\hyperlink{_header_datei_8h_ac47b2bd906d2c843b97ecae6c1eea710}{Parity}}}]{parity,  }\item[{uint8\+\_\+t}]{stopbits }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ Initialize the USART interface with the specified parameters 
+
+\mbox{\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+~\newline
+ initialize the USART interface 
+\begin{DoxyParams}{Parameters}
+{\em 9600} & Baudrate \\
+\hline
+{\em 8} & Data bits \\
+\hline
+{\em none} & Parity \\
+\hline
+{\em 1} & Stopbit\\
+\hline
+\end{DoxyParams}
+~\newline
+ make the cursor invisible
+
+~\newline
+ Clear bit 0 of DDRC to set joyx as input make the cursor invisible Clear 1 of DDRC to set joyy as input
+
+~\newline
+ initializes the game state by allocating memory for the snake and placing it at the center of the screen.
+
+~\newline
+ draw the initialisierte field
+
+~\newline
+ draw the score
+
+~\newline
+ save screen
+
+~\newline
+ main loop\mbox{\Hypertarget{main_8cpp_a95178a7e51ec2ee2bf29451c861d09bf}\label{main_8cpp_a95178a7e51ec2ee2bf29451c861d09bf}} 
+\index{main.cpp@{main.cpp}!placeFood@{placeFood}}
+\index{placeFood@{placeFood}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{placeFood()}{placeFood()}}
+{\footnotesize\ttfamily void place\+Food (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a2664904598abae2433dda5423060754f}\label{main_8cpp_a2664904598abae2433dda5423060754f}} 
+\index{main.cpp@{main.cpp}!readInput@{readInput}}
+\index{readInput@{readInput}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{readInput()}{readInput()}}
+{\footnotesize\ttfamily void read\+Input (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ reads the input from the joystick and sets the direction of movement based on the input. Read the X value Determine the direction based on the joystick inputs 
+
+\mbox{\hyperlink{main_8cpp_a2664904598abae2433dda5423060754f}{read\+Input()}} \mbox{\Hypertarget{main_8cpp_a7ebd9759b4e3197bf52bab531982c0ff}\label{main_8cpp_a7ebd9759b4e3197bf52bab531982c0ff}} 
+\index{main.cpp@{main.cpp}!update@{update}}
+\index{update@{update}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ This function updates the game state by moving the snake, checking for collision with the food or the walls, and updating the score. 
+
+\mbox{\Hypertarget{main_8cpp_a53445e9faa28521aa22dccee92b3e344}\label{main_8cpp_a53445e9faa28521aa22dccee92b3e344}} 
+\index{main.cpp@{main.cpp}!updatescreen@{updatescreen}}
+\index{updatescreen@{updatescreen}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{updatescreen()}{updatescreen()}}
+{\footnotesize\ttfamily void updatescreen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ This function is responsible for updating the screen after every game loop iteration. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\mbox{\Hypertarget{main_8cpp_a13b5ba483139c647ca7a177c7027deb4}\label{main_8cpp_a13b5ba483139c647ca7a177c7027deb4}} 
+\index{main.cpp@{main.cpp}!usart\_putstring@{usart\_putstring}}
+\index{usart\_putstring@{usart\_putstring}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{usart\_putstring()}{usart\_putstring()}}
+{\footnotesize\ttfamily void usart\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+~\newline
+ function to send escape sequences to draw the grid, the score, and save the screen. 
+
+~\newline
+ function to send escape sequences to draw the grid, the score, and save the screen. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}\label{main_8cpp_abb3fb3c13325b6f5206e79234aea8772}} 
+\index{main.cpp@{main.cpp}!buffer@{buffer}}
+\index{buffer@{buffer}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char buffer\mbox{[}30\mbox{]}}
+
+
+
+~\newline
+ buffer to store formatted strings 
+
+\mbox{\Hypertarget{main_8cpp_a3d8db2824cad1464d7afac797ee469d5}\label{main_8cpp_a3d8db2824cad1464d7afac797ee469d5}} 
+\index{main.cpp@{main.cpp}!COLS@{COLS}}
+\index{COLS@{COLS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{COLS}{COLS}}
+{\footnotesize\ttfamily const int16\+\_\+t COLS = 20}
+
+\mbox{\Hypertarget{main_8cpp_ab4dcd7ccfeb9a519c1b9d91bb575928c}\label{main_8cpp_ab4dcd7ccfeb9a519c1b9d91bb575928c}} 
+\index{main.cpp@{main.cpp}!direction@{direction}}
+\index{direction@{direction}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily int16\+\_\+t direction = 1}
+
+\mbox{\Hypertarget{main_8cpp_ac75d07e616de721bba7f5e31fe0de5a0}\label{main_8cpp_ac75d07e616de721bba7f5e31fe0de5a0}} 
+\index{main.cpp@{main.cpp}!food\_x@{food\_x}}
+\index{food\_x@{food\_x}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{food\_x}{food\_x}}
+{\footnotesize\ttfamily int16\+\_\+t food\+\_\+x}
+
+\mbox{\Hypertarget{main_8cpp_a810a4966e976f72cb189cbac97855d9b}\label{main_8cpp_a810a4966e976f72cb189cbac97855d9b}} 
+\index{main.cpp@{main.cpp}!food\_y@{food\_y}}
+\index{food\_y@{food\_y}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{food\_y}{food\_y}}
+{\footnotesize\ttfamily int16\+\_\+t food\+\_\+y}
+
+\mbox{\Hypertarget{main_8cpp_a749531d3d244d27ab1930f8d898ecd83}\label{main_8cpp_a749531d3d244d27ab1930f8d898ecd83}} 
+\index{main.cpp@{main.cpp}!lastfoodposx@{lastfoodposx}}
+\index{lastfoodposx@{lastfoodposx}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lastfoodposx}{lastfoodposx}}
+{\footnotesize\ttfamily int16\+\_\+t lastfoodposx}
+
+\mbox{\Hypertarget{main_8cpp_a75757a872745203c753d2b7049e85543}\label{main_8cpp_a75757a872745203c753d2b7049e85543}} 
+\index{main.cpp@{main.cpp}!lastfoodposy@{lastfoodposy}}
+\index{lastfoodposy@{lastfoodposy}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lastfoodposy}{lastfoodposy}}
+{\footnotesize\ttfamily int16\+\_\+t lastfoodposy}
+
+\mbox{\Hypertarget{main_8cpp_a0a4f0bf7241669e35afad629427b8601}\label{main_8cpp_a0a4f0bf7241669e35afad629427b8601}} 
+\index{main.cpp@{main.cpp}!ROWS@{ROWS}}
+\index{ROWS@{ROWS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ROWS}{ROWS}}
+{\footnotesize\ttfamily const int16\+\_\+t ROWS = 20}
+
+
+
+~\newline
+ //the dimensions of the grid 
+
+\mbox{\Hypertarget{main_8cpp_a5d0ae2df43e0dfad7165621eda12e6a6}\label{main_8cpp_a5d0ae2df43e0dfad7165621eda12e6a6}} 
+\index{main.cpp@{main.cpp}!snake@{snake}}
+\index{snake@{snake}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{snake}{snake}}
+{\footnotesize\ttfamily int16\+\_\+t$\ast$$\ast$ snake}
+
+\mbox{\Hypertarget{main_8cpp_af427c65f47aefdca1425afc39025f099}\label{main_8cpp_af427c65f47aefdca1425afc39025f099}} 
+\index{main.cpp@{main.cpp}!snake\_length@{snake\_length}}
+\index{snake\_length@{snake\_length}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{snake\_length}{snake\_length}}
+{\footnotesize\ttfamily int16\+\_\+t snake\+\_\+length = 1}
+
