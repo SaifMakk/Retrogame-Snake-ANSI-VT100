@@ -9,14 +9,14 @@ This repository contains a simple implementation of the classic Snake game in C,
 ## Introduction
 Snake is a classic arcade game where the player controls a snake that grows as it eats food. The goal is to eat as much food as possible without running into the walls or the snake's own tail. In this implementation, the game is played on an AVR microcontroller connected to a Serial display and a joystick.
 
-# Instructions
+## Instructions
 - Requirements
 In order to play the game, you will need:
 
-1- An AVR microcontroller 
+### An AVR microcontroller 
 Notice :This implementation uses Ansi Escape Sequences. To run this game, you need to use a serial monitor that is compatible with all escape sequence commands. I recommend using Terra term.
-2- Serial monitor 
-3- A joystick
+### Serial monitor 
+### A joystick
 
 - Installation
 Clone this repository and upload the main.cpp file to your AVR microcontroller.
