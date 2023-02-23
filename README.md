@@ -14,8 +14,8 @@ Snake is a classic arcade game where the player controls a snake that grows as i
 In order to play the game, you will need:
 
 ### An AVR microcontroller 
-Notice :This implementation uses Ansi Escape Sequences. To run this game, you need to use a serial monitor that is compatible with all escape sequence commands. I recommend using Terra term.
 ### Serial monitor 
+Notice :This implementation uses Ansi Escape Sequences. To run this game, you need to use a serial monitor that is compatible with all escape sequence commands. I recommend using Terra term.
 ### A joystick
 
 - Installation
