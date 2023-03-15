@@ -34,3 +34,14 @@ main.cpp contains the game logic itself, including functions to initialize the g
 
 ### Low-Level Hardware Interaction
 main.cpp interacts directly with the AVR microcontroller's hardware to control the Serial Monitor and read input from the joystick. It uses the avr/io.h, util/delay.h and header files to access the necessary hardware registers .
+
+
+
+
+
+
+
+
+
+
+
