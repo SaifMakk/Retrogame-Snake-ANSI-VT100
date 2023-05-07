@@ -27,11 +27,15 @@ In order to play the game, you will need:
 2. Serial monitor
    - *Notice*: This implementation uses Ansi Escape Sequences. To run this game, you need to use a serial monitor that is compatible with all escape sequence commands. I recommend using Terra term.
 3. A joystick
+4. Visual Studio Code IDE with PlatformIO extension
 
 ### Installation
 
-1. Connect the joystick pins to the AVR board as follows: Vcc to 5V, JoyX to PC0, JoyY to PC1, and Gnd to Gnd.
-2. Clone this repository and upload the main.cpp file to your AVR microcontroller.
+1. Install [Visual Studio Code](https://code.visualstudio.com/) and the [PlatformIO extension](https://platformio.org/platformio-ide).
+2. Connect the joystick pins to the AVR board as follows: Vcc to 5V, JoyX to PC0, JoyY to PC1, and Gnd to Gnd.
+3. Clone this repository and open it in Visual Studio Code.
+4. Configure the PlatformIO project for your AVR microcontroller.
+5. Upload the main.cpp file to your AVR microcontroller using the PlatformIO extension.
 
 ### Playing the Game
 
@@ -50,6 +54,7 @@ main.cpp contains the game logic itself, including functions to initialize the g
 ### Low-Level Hardware Interaction
 
 main.cpp interacts directly with the AVR microcontroller's hardware to control the Serial Monitor and read input from the joystick. It uses the avr/io.h, util/delay.h and header files to access the necessary hardware registers.
+
 
 
 
